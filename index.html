@@ -27,7 +27,7 @@
   <script> 
   function goBack() {
     if (document.referrer !== "") {
-      window.history.back();
+      window.history.go(1);
     } else {
       window.location.href = "http://www.google.com";
     }
