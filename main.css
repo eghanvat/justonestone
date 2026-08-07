@@ -71,6 +71,7 @@
   width: 100%;
   box-sizing: border-box;
   padding: 16px;
+  padding-bottom: 10%;
   
   /* Positions the buttons side-by-side */
   display: flex;
@@ -79,7 +80,7 @@
   
   /* Optional: Soft background blur to make text readable */
   background: linear-gradient(to top, rgba(255,255,255,0.9), rgba(255,255,255,0));
-  z-index: 9999; /* Keeps buttons above all images */
+  z-index: 999; /* Keeps buttons above all images */
 }
 
 /* Individual button styling */
@@ -98,12 +99,66 @@
 
 /* Button variants */
 .btn-primary {
-  background-color: #333333;
+  background-color: #555;
   color: white;
 }
 
 .btn-secondary {
-  background-color: #e0e0e0;
+  background-color: #a0a0a0;
   color: #333333;
 }
 
+/* Gallery Styles */
+.gallery {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.clickable-img {
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.clickable-img:hover {
+  transform: scale(1.05);
+}
+
+/* Fullscreen Overlay Styles (All Screens) */
+.overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark background overlay */
+  z-index: 9999; /* Sits on top of everything */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive Image inside Overlay */
+.overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain; /* Prevents image distortion */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* Close Button Layout */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.info {
+    text-align: center;
+    max-width: 90%;
+    padding: 0px 20px;
+    font-weight: bold;
+}
