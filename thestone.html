@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Buy one stone </title>
+</head>
+<body id="page">
+  <div class="stone-wrapper">
+      <img src="stone.png" id="top-center-img" description="1 billion dollar stone" class="clickable-img"/>
+      <h6 class="stone-text"> The Stone. </h6>
+      
+      <div class="info">
+      <p> Details: I picked this stone in Leh, India, around August 2026.
+       It is a common stone with no apparent special properties.</p>
+       
+       
+       <!-- Wrapper forces a row and keeps elements vertically locked to center -->
+<div style="display: flex; flex-direction: row; align-items: center; justify-content: center; margin-top: 10px;">
+    
+    <!-- Text styling matching your UI layout -->
+    <p style="margin: 0; padding: 0;">About me: &nbsp;</p>
+    
+    <!-- Cleaned anchor layout container -->
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; line-height: 0; text-decoration: none;">
+        <svg xmlns="http://w3.org" viewBox="0 0 24 24" style="width: 24px; height: 24px; display: block;">
+            <defs>
+                <linearGradient id="instaGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#FED373" />
+                    <stop offset="25%" stop-color="#F15245" />
+                    <stop offset="60%" stop-color="#D92E7F" />
+                    <stop offset="100%" stop-color="#9B36B7" />
+                </linearGradient>
+            </defs>
+            <rect width="24" height="24" rx="5.5" fill="url(#instaGradient)"/>
+            <path fill="#FFFFFF" d="M12 5.8c2.02 0 2.26.01 3.06.04.74.04 1.14.16 1.4.26.36.14.61.3.88.57.27.27.43.52.57.88.1.27.22.67.26 1.41.04.8.04 1.04.04 3.05s-.01 2.26-.04 3.06c-.04.74-.16 1.14-.26 1.4-.14.36-.3.61-.57.88-.27.27-.52.43-.88.57-.27.1-.67.22-1.41.26-.8.04-1.04.04-3.05.04s-2.26-.01-3.06-.04c-.74-.04-1.14-.16-1.4-.26a2.4 2.4 0 0 1-.88-.57 2.4 2.4 0 0 1-.57-.88c-.1-.27-.22-.67-.26-1.41-.04-.8-.04-1.04-.04-3.05s.01-2.26.04-3.06c.04-.74.16-1.14.26-1.4.14-.36.3-.61.57-.88.27-.27.52-.43.88-.57.27-.1.67-.22 1.41-.26.8-.04 1.04-.04 3.05-.04M12 4.3c-2.05 0-2.31.01-3.12.05-.8.03-1.36.16-1.84.35a3.8 3.8 0 0 0-1.38.9 3.8 3.8 0 0 0-.9 1.38c-.19.48-.32 1.03-.35 1.84-.04.8-.05 1.06-.05 3.12s.01 2.31.05 3.12c.03.8.16 1.36.35 1.84.1.26.24.49.42.72.18.22.4.44.62.62.23.18.46.32.72.42.48.19 1.03.32 1.84.35.8.04 1.06.05 3.12.05s2.31-.01 3.12-.05c.8-.03 1.36-.16 1.84-.35a4 4 0 0 0 2-.2 3.8 3.8 0 0 0 .9-1.38c.19-.48.32-1.03.35-1.84.04-.8.05-1.06.05-3.12s-.01-2.31-.05-3.12c-.03-.8-.16-1.36-.35-1.84a3.8 3.8 0 0 0-.9-1.38 3.8 3.8 0 0 0-1.38-.9c-.48-.19-1.03-.32-1.84-.35-.8-.04-1.04-.05-3.12-.05z"/>
+            <path fill="#FFFFFF" d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 6.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+            <circle cx="17.3" cy="6.7" r="0.9" fill="#FFFFFF"/>
+        </svg>
+    </a>
+</div>
+
+
+</div>
+      
+  </div>
+  
+  <div id="fullscreenOverlay" class="overlay"> <span class="close-btn">&times;</span> <img id="overlayImg" src="" alt="Enlarged View"> </div>
+  
+  <div class="bottom-button-container">
+    <button class="btn btn-primary" onClick="goBack();"> Back </button>
+  </div>
+  
+  <script> 
+  function goBack() {
+    if (document.referrer !== "") {
+      window.history.back(-4);
+    } else {
+      window.location.href = "http://www.google.com";
+    }
+  }
+  
+  // Get DOM elements
+const overlay = document.getElementById('fullscreenOverlay');
+const overlayImg = document.getElementById('overlayImg');
+const closeBtn = document.querySelector('.close-btn');
+const images = document.querySelectorAll('.clickable-img');
+
+// Open overlay on click
+images.forEach(img => {
+  img.addEventListener('click', (e) => {
+    overlay.style.display = 'flex'; // Uses flex layout to center perfectly
+    overlayImg.src = e.target.src; // Dynamically grab source image
+  });
+});
+
+// Close overlay on clicking 'X'
+closeBtn.addEventListener('click', () => {
+  overlay.style.display = 'none';
+});
+
+// Close overlay on clicking anywhere outside the image
+overlay.addEventListener('click', (e) => {
+  if (e.target !== overlayImg && e.target !== closeBtn) {
+    overlay.style.display = 'none';
+  }
+});
+
+  </script>
+
+        
+</body>
+</html>
