@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Buy one stone </title>
+</head>
+<body id="page">
+  <div class="stone-wrapper">
+      <img src="s.png" id="top-center-img" description="1 billion dollar stone" />
+      <h6 class="stone-text"> Do you think right now; that the Universe has a intelligent creator? </h3>
+      
+  </div>
+  
+  <div class="bottom-button-container">
+    <button class="btn btn-primary" onClick="goBack();">No</button>
+    <button class="btn btn-secondary" onclick="window.location.href='thestone.html';"">Yes</button>
+  </div>
+  
+  <script> 
+  function goBack() {
+    if (document.referrer !== "") {
+      window.history.back(-3);
+    } else {
+      window.location.href = "http://www.google.com";
+    }
+  }
+  </script>
+
+        
+</body>
+</html>
