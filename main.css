@@ -1,6 +1,109 @@
 #page {
-  background-image: url('IMG-20260807-WA0000.jpg');
+  background-image: url("bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 100vh;
+  margin:0;
 }
+
+#top-center-img {
+  /* Center horizontally at the top */
+  display: block;
+  margin: 0 auto;
+  
+  /* Flexible sizing for all devices */
+  width: 20%;
+  max-width: 600px; /* Limits size on large screens */
+  height: auto;     /* Maintains correct aspect ratio */
+  
+  /* Optional: Adds spacing from the very top of the page */
+  padding-top: 20px;
+  
+  mix-blend-mode: multiply;
+  
+  z-index: 1;
+}
+
+/* Container holding the stone and its label */
+.stone-wrapper {
+  position: absolute; 
+  top: 15%;          
+  left: 50%;
+  transform: translateX(-50%); 
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the image and text box horizontally */
+  gap: 12px;           
+  
+  width: 100%;        /* Allows the container room to center elements */
+  max-width: 400px;   /* Constrains the container size on huge displays */
+  box-sizing: border-box;
+}
+
+/* Typography settings optimized for perfect centering */
+.stone-text {
+  margin: 0;
+  width: 100%;         /* Spans the full width of the wrapper */
+  text-align: center;  /* Forces text alignment to absolute center */
+  font-size: 1.5rem;   
+  color: #333333;      
+  
+  /* Fallback layout support */
+  display: block;      
+}
+
+/* Mobile responsive sizing */
+@media (max-width: 480px) {
+  .stone-text {
+    font-size: 1.2rem; 
+    padding: 0 10px;   /* Prevents text from touching edge of screen if long */
+  }
+}
+
+
+/* Sticky container at the bottom */
+.bottom-button-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  
+  /* Positions the buttons side-by-side */
+  display: flex;
+  gap: 12px; /* Gap between buttons */
+  justify-content: center; /* Centers them on desktop screens */
+  
+  /* Optional: Soft background blur to make text readable */
+  background: linear-gradient(to top, rgba(255,255,255,0.9), rgba(255,255,255,0));
+  z-index: 9999; /* Keeps buttons above all images */
+}
+
+/* Individual button styling */
+.btn {
+  flex: 1; /* Forces buttons to grow equally */
+  max-width: 200px; /* Prevents buttons from becoming too wide on large screens */
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+/* Button variants */
+.btn-primary {
+  background-color: #333333;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #e0e0e0;
+  color: #333333;
+}
+
